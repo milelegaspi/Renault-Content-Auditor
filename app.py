@@ -23,14 +23,20 @@ st.set_page_config(page_title="Renault Content Auditor")
 st.markdown(
     """
     <style>
+
+    svg {
+        width: 40px !important;
+        height: auto !important;
+    }
+
     @font-face {
         font-family: 'NouvelR';
         src: url('assets/NouvelR-Regular-AH-a6ef79cbe0c9af2e.woff2') format('woff2');
     }
 
-    html, body, [class*="css"] {
-        font-family: 'NouvelR', sans-serif;
-    }
+    html, body, [class*="css"], [data-testid="stAppViewContainer"] * {
+    font-family: 'NouvelR', sans-serif !important;
+}
 
     .main-title {
         font-size: 42px;
@@ -67,9 +73,9 @@ with open("assets/LogoRenault.svg", "r", encoding="utf-8") as file:
 st.markdown(
     f"""
     <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
-        <div style="width:80px;">
-            {svg_logo}
-        </div>
+        <div style="width:40px; display:flex; align-items:center;">
+    {svg_logo}
+    </div>
         <div>
             <div class="main-title">Renault AI Content Auditor</div>
             <div class="subtitle">
