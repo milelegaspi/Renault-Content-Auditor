@@ -4,6 +4,9 @@ from PIL import Image
 from dotenv import load_dotenv
 import os
 
+
+
+
 # Load API key
 load_dotenv()
 
@@ -13,7 +16,70 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Streamlit UI
-st.set_page_config(page_title="Renault AI Auditor")
+st.set_page_config(page_title="Renault Content Auditor")
+
+# RENAULT FONT
+
+st.markdown(
+    """
+    <style>
+    @font-face {
+        font-family: 'NouvelR';
+        src: url('assets/NouvelR-Regular-AH-a6ef79cbe0c9af2e.woff2') format('woff2');
+    }
+
+    html, body, [class*="css"] {
+        font-family: 'NouvelR', sans-serif;
+    }
+
+    .main-title {
+        font-size: 42px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #555555;
+        margin-bottom: 30px;
+    }
+
+    .stButton>button {
+        background-color: #FFCC00;
+        color: black;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        padding: 10px 20px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+#RENAULT SVG LOGO
+
+with open("assets/LogoRenault.svg", "r", encoding="utf-8") as file:
+    svg_logo = file.read()
+
+st.markdown(
+    f"""
+    <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+        <div style="width:80px;">
+            {svg_logo}
+        </div>
+        <div>
+            <div class="main-title">Renault AI Content Auditor</div>
+            <div class="subtitle">
+                AI-powered guideline auditing for importer social media and marketing assets
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title("Renault AI Creative Auditor")
 
@@ -25,6 +91,7 @@ uploaded_image = st.file_uploader(
 )
 
 copy_text = st.text_area("Paste Copy")
+
 
 # MAIN PROMPT
 PROMPT = """
