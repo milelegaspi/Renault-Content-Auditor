@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 import os
 
 
-
-
 # Load API key
 load_dotenv()
 
@@ -24,41 +22,31 @@ st.markdown(
     """
     <style>
 
+      @font-face {
+        font-family: 'NouvelR';
+        src: url('assets/NouvelR-Regular-AH-a6ef79cbe0c9af2e.woff2') format('woff2');
+    }
+
     svg {
         width: 40px !important;
         height: auto !important;
     }
 
-    @font-face {
-        font-family: 'NouvelR';
-        src: url('assets/NouvelR-Regular-AH-a6ef79cbe0c9af2e.woff2') format('woff2');
-    }
-
-    html, body, [class*="css"], [data-testid="stAppViewContainer"] * {
-    font-family: 'NouvelR', sans-serif !important;
-}
-
     .main-title {
+        font-family: 'NouvelR', sans-serif;
         font-size: 42px;
         font-weight: 700;
         color: #000000;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     .subtitle {
-        font-size: 18px;
+        font-family: 'NouvelR', sans-serif;
+        font-size: 16px;
         color: #555555;
         margin-bottom: 30px;
     }
 
-    .stButton>button {
-        background-color: #FFCC00;
-        color: black;
-        border-radius: 10px;
-        border: none;
-        font-weight: bold;
-        padding: 10px 20px;
-    }
 
     </style>
     """,
@@ -86,8 +74,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.title("Renault AI Creative Auditor")
 
 st.write("Upload a social media creative and paste the copy.")
 
