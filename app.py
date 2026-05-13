@@ -55,7 +55,7 @@ st.markdown(
 
 #RENAULT SVG LOGO
 
-with open("assets/LogoRenault.svg", "r", encoding="utf-8") as file:
+with open("assets/LogoRenaultWhite.svg", "r", encoding="utf-8") as file:
     svg_logo = file.read()
 
 st.markdown(
@@ -177,3 +177,6 @@ if uploaded_image and st.button("Analyze Creative"):
     st.subheader("📋 Audit Result")
 
     st.write(response.text)
+
+
+
