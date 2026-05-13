@@ -16,37 +16,140 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # Streamlit UI
 st.set_page_config(page_title="Renault Content Auditor")
 
-# RENAULT FONT
+# CSS
 
 st.markdown(
     """
     <style>
 
-      @font-face {
+    @font-face {
         font-family: 'NouvelR';
         src: url('assets/NouvelR-Regular-AH-a6ef79cbe0c9af2e.woff2') format('woff2');
     }
+
+    /* ===== GLOBAL BACKGROUND ===== */
+
+    .stApp {
+        background-color: #000000;
+    }
+
+    /* ===== TEXT ===== */
+
+    html, body, p, div, span, label {
+        color: white !important;
+        font-family: 'NouvelR', sans-serif;
+    }
+
+    /* ===== SVG LOGO ===== */
 
     svg {
         width: 40px !important;
         height: auto !important;
     }
 
+    /* ===== TITLES ===== */
+
     .main-title {
         font-family: 'NouvelR', sans-serif;
         font-size: 42px;
         font-weight: 700;
-        color: #000000;
+        color: white;
         margin-bottom: 5px;
     }
 
     .subtitle {
         font-family: 'NouvelR', sans-serif;
         font-size: 16px;
-        color: #555555;
+        color: #CCCCCC;
         margin-bottom: 30px;
     }
 
+    /* ===== INPUTS ===== */
+
+    textarea, input {
+    background-color: #111111 !important;
+    color: white !important;
+    border: 1px solid #444444 !important;
+    border-radius: 10px !important;
+}
+
+    /* ===== FILE UPLOADER ===== */
+
+   [data-testid="stFileUploader"] {
+    background-color: #111111 !important;
+    border: 1px dashed #444444 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+}
+
+[data-testid="stFileUploader"] section {
+    background-color: #111111 !important;
+}
+
+[data-testid="stFileUploader"] div {
+    background-color: #111111 !important;
+    color: white !important;
+}
+
+section[data-testid="stFileUploader"] * {
+    color: white !important;
+}
+
+    /* ===== BUTTON ===== */
+
+    .stButton > button {
+    background-color: #efdf00 !important;
+    color: black !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    padding: 12px 24px !important;
+    font-family: 'NouvelR', sans-serif !important;
+}
+
+[data-testid="stFileUploader"] button {
+    background-color: #efdf00 !important;
+    color: black !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: bold !important;
+}
+.stButton button {
+    background-color: #efdf00 !important;
+    color: black !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    padding: 12px 24px !important;
+    font-family: 'NouvelR', sans-serif !important;
+}
+
+[data-testid="stFileUploader"] button * {
+    color: black !important;
+    fill: black !important;
+    background: transparent !important;
+}
+
+.stButton button:hover {
+    background-color: #f7ea4a !important;
+    color: black !important;
+}
+
+.stButton button * {
+    color: black !important;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    background-color: black !important;
+}
+
+/* ===== SIDEBAR ===== */
+
+[data-testid="stSidebar"] {
+    background-color: #0a0a0a;
+}
 
     </style>
     """,
