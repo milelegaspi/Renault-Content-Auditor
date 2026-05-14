@@ -151,6 +151,14 @@ header {
     background-color: #0a0a0a;
 }
 
+[data-testid="stMarkdownContainer"] {
+    font-family: 'NouvelR', sans-serif !important;
+}
+
+[data-testid="stMarkdownContainer"] * {
+    font-family: 'NouvelR', sans-serif !important;
+}
+
     </style>
     """,
     unsafe_allow_html=True
